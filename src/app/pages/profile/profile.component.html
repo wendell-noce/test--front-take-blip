@@ -1,7 +1,7 @@
 <div class="profile">
-  <div class='container'>
+  <div class='container' *ngIf="!loading">
     <div class='row'>
-      <div class='profile__header' *ngIf="!loading">
+      <div class='profile__header'>
         <div class="name">
           <div class="ico">
             <img src="../../../assets/images/blip.png" alt="">
@@ -68,5 +68,10 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="profile__loading" *ngIf="loading" >
+    <!-- basic loading-->
+    <mat-spinner [diameter]="40" mode="indeterminate"></mat-spinner>
   </div>
 </div>

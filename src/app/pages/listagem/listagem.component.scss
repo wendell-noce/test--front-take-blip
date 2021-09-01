@@ -1,5 +1,6 @@
 @import '../../shared/scss/components/variables';
 @import '../../shared/scss/components/buttons';
+@import '../../shared/scss/vendor/common-bootstrap';
 
 .list {
   padding: 16px 0 0;
@@ -7,24 +8,51 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
   }
 
   &__title {
     font-size: 1.75rem;
     color: $secondary;
     margin: 0;
+    width: 100%;
+    text-align: center;
+    @include media-breakpoint-up(lg) {
+      width: max-content;
+    }
   }
 
   &__serach-order {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    flex: 0 0 60%;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @include media-breakpoint-up(md) {
+      flex: 0 0 100%;
+      margin-top: 16px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      justify-content: flex-end;
+      flex: 0 0 70%;
+      margin-top: 0px;
+    }
   }
 
   &__search  {
-    flex: 0 0 45%;
-    margin-right: 8px;
+    flex: 0 0 80%;
+    margin-bottom: 16px;
+    margin-top: 16px;
+
+    @include media-breakpoint-up(md) {
+      flex: 0 0 45%;
+      margin-bottom: 0px;
+      margin-top: 0px;
+      margin-right: 8px;
+    }
+
     input {
       height: 39px;
       width: 100%;
@@ -65,6 +93,7 @@
   }
 
   &__favorites {
+    width: 100%;
     padding-top: 32px;
     padding-bottom: 16px;
 
@@ -84,11 +113,19 @@
   &__cards{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     width: 100%;
 
+    @include media-breakpoint-up(lg) {
+      justify-content: start;
+    }
+
     app-bot-card{
-      flex: 0 0 200px;
-      margin-right: 16px;
+      flex: 0 0 44%;
+      margin-right: 8px;
+      @include media-breakpoint-up(md) {
+        flex: 0 0 200px
+      }
     }
 
     &.inline {
@@ -100,6 +137,7 @@
   }
 
   &__loading {
+    width: 100%;
     .mat-spinner {
       background: transparent;
       margin: 42px auto;

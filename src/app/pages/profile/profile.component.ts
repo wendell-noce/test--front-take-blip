@@ -1,7 +1,7 @@
 import { ListService } from './../../core/api/list.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import * as moment from 'moment';
+import { finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'app-profile',
@@ -23,9 +23,14 @@ export class ProfileComponent implements OnInit {
   }
 
   getDataBot() {
-    this.listService.getBotsList(this.route.snapshot.paramMap.get("shortName")).subscribe( data => {
+    this.listService.getBotsList(this.route.snapshot.paramMap.get("shortName")).pipe(
+      finalize( () => {
+        setTimeout(() => {
+          this.loading = false;
+        }, 1000);
+      })
+    ).subscribe( data => {
       this.bot = data[0];
-      this.loading = false;
     })
   }
 

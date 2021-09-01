@@ -1,6 +1,5 @@
 import { ListService } from './../../core/api/list.service';
 import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
-import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-listagem',
@@ -40,13 +39,25 @@ export class ListagemComponent implements OnInit {
   }
 
   sortByName(){
+    this.loading = true;
+
     this.listBots.sort((a, b) => a.name.localeCompare(b.name))
     this.listFavoritebots.sort((a, b) => a.name.localeCompare(b.name))
+
+    setTimeout(() => {
+      this.loading = false;
+    }, 700);
   }
 
   sortByDate() {
+    this.loading = true;
+
     this.listBots.sort((a, b) => a.created.localeCompare(b.created))
     this.listFavoritebots.sort((a, b) => a.created.localeCompare(b.created))
+
+    setTimeout(() => {
+      this.loading = false;
+    }, 700);
   }
 
   addRemoveFavorite(obj: any) {

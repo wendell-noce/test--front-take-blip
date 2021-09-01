@@ -26,26 +26,6 @@ export class ApiService extends HttpClient {
         return super.get(endpoint);
     }
 
-    post(
-        endpoint: string,
-        body: any | null,
-        options?: any | null
-    ): Observable<any> {
-        return super.post(this.buildUrl(endpoint), body, options);
-    }
-
-    put(
-        endpoint: string,
-        body: any | null,
-        options?: any | null
-    ): Observable<any> {
-        return super.put(this.buildUrl(endpoint), body, options);
-    }
-
-    delete(endpoint: string, options?: any | null): Observable<any> {
-        return super.delete(this.buildUrl(endpoint), options);
-    }
-
     patch(
       id: string | null,
         body: any | null
