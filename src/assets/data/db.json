@@ -140,7 +140,7 @@
     },
     {
       "id": 7,
-      "favorite": true,
+      "favorite": false,
       "shortName": "Will",
       "name": "will",
       "description": "Interpretado por: Noah Schnapp.",

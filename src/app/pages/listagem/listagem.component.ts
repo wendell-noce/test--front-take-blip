@@ -1,3 +1,4 @@
+import { Bot } from './../../core/model/bot.model';
 import { ListService } from './../../core/api/list.service';
 import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 
@@ -9,8 +10,8 @@ import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 export class ListagemComponent implements OnInit {
   search: string;
 
-  listBots: any = [];
-  listFavoritebots: any = [];
+  listBots: Array<Bot> = [];
+  listFavoritebots: Array<Bot> = [];
 
   gridType: boolean = false;
   loading: boolean = true;
@@ -60,8 +61,8 @@ export class ListagemComponent implements OnInit {
     }, 700);
   }
 
-  addRemoveFavorite(obj: any) {
-    const botId = obj.id;
+  addRemoveFavorite(obj: Bot) {
+    const botId = obj.id.toString();
     const favorite = obj.favorite ? false : true;
     this.loading = true;
 

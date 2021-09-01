@@ -1,3 +1,4 @@
+import { Bot } from './../model/bot.model';
 import { Observable } from 'rxjs';
 import { ApiService } from './api.service';
 import { Injectable } from '@angular/core';
@@ -9,11 +10,11 @@ export class ListService {
 
   constructor(private apiService: ApiService) { }
 
-  getBotsList(id = ""): Observable<any> {
+  getBotsList(id = ""): Observable<Bot> {
     return this.apiService.get(id);
   }
 
-  addRemoveFavorite(id:string, val: boolean): Observable<any> {
+  addRemoveFavorite(id:string, val: boolean): Observable<Bot> {
     return this.apiService.patch(id, {
       "favorite": val,
     });
