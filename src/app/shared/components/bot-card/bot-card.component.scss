@@ -1,0 +1,153 @@
+@import '../../scss/components/variables';
+
+.bot-card {
+  svg {
+    polygon {
+      transition: all .3s ease;
+      fill: #fff;
+      stroke: #b9cbd3;
+    }
+  }
+
+   img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+  &.inline {
+    flex: 0 0 100%;
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 24px;
+
+    .bot-card__icon {
+      cursor: pointer;
+      flex: 0 0 40px;
+      background-color: #f5f8f9;
+      padding: 8px;
+    }
+
+    .bot-card__content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex: 0 0 calc( 100% - 30px);
+      cursor: pointer;
+
+      background: #fff;
+      padding: 16px;
+      border-radius: 8px;
+
+      box-shadow: 0px 0px 12px 0px #ddd;
+
+      p{
+        margin: 0;
+      }
+
+      .name-image {
+        display: flex;
+        align-items: center;
+
+        .image {
+          display: block;
+          background: $primary;
+          width: 35px;
+          height: 35px;
+          border-radius: 20px;
+          margin-right: 8px;
+
+
+        }
+
+        .name {
+          p{
+            font-size: .75rem;
+            font-weight: 700;
+            color: #52636c;
+          }
+        }
+      }
+
+      .date {
+        p{
+          font-size: .75rem;
+          font-weight: 400;
+          color: #738192;
+        }
+      }
+    }
+  }
+
+  &.block {
+    background: #fff;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 24px;
+
+    .bot-card__icon {
+      margin-bottom: 8px;
+      cursor: pointer;
+
+
+      &:hover {
+        svg {
+          transition: all .3s ease;
+         polygon {
+          fill: #f9b42f;
+          stroke: #f9b42f;
+         }
+        }
+      }
+    }
+
+    .bot-card__content {
+      text-align: center;
+      cursor: pointer;
+      p{
+        margin: 0;
+      }
+
+      .name-image {
+        .image {
+          display: block;
+          background: $primary;
+          width: 42px;
+          height: 42px;
+          border-radius: 20px;
+          margin: 8px auto 16px;
+        }
+
+        .name {
+          margin-bottom: 8px;
+          p{
+            font-size: .75rem;
+            font-weight: 700;
+            color: #52636c;
+          }
+        }
+      }
+
+      .date {
+        p{
+          font-size: .75rem;
+          font-weight: 400;
+          color: #738192;
+        }
+      }
+    }
+  }
+
+  &.favorite {
+    .bot-card__icon {
+      svg {
+        polygon {
+          fill: #f9b42f;
+          stroke: #f9b42f;
+        }
+       }
+    }
+  }
+}

@@ -1,0 +1,108 @@
+@import '../../shared/scss/components/variables';
+@import '../../shared/scss/components/buttons';
+
+.list {
+  padding: 16px 0 0;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 1.75rem;
+    color: $secondary;
+    margin: 0;
+  }
+
+  &__serach-order {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 0 0 60%;
+  }
+
+  &__search  {
+    flex: 0 0 45%;
+    margin-right: 8px;
+    input {
+      height: 39px;
+      width: 100%;
+
+      padding-left: 12px;
+
+      border: 1px solid #d2dfe6;
+      border-radius: 8px;
+
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: .815rem;
+      font-weight: 600;
+      color: #8ca0b3;
+
+      outline: none;
+
+      &::placeholder {
+        color: #8ca0b3;
+      }
+    }
+  }
+
+  &__grid {
+    svg{
+      fill: #d2dfe6;
+      path {
+        fill: #d2dfe6
+      }
+    }
+    .active {
+      svg{
+        fill: #56616e;
+        path {
+          fill: #56616e
+        }
+      }
+    }
+  }
+
+  &__favorites {
+    padding-top: 32px;
+    padding-bottom: 16px;
+
+    border-bottom: 2px solid #d2dfe6;
+
+    h3 {
+      color: #607b99;
+      margin: 0 0 16px;
+    }
+  }
+
+  &__all {
+    padding-top: 32px;
+    padding-bottom: 16px;
+  }
+
+  &__cards{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    app-bot-card{
+      flex: 0 0 200px;
+      margin-right: 16px;
+    }
+
+    &.inline {
+      app-bot-card{
+        flex: 0 0 100%;
+      }
+    }
+
+  }
+
+  &__loading {
+    .mat-spinner {
+      background: transparent;
+      margin: 42px auto;
+    }
+  }
+}
